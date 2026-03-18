@@ -86,7 +86,12 @@ define Device/bell_xg-040g-md
   IMAGES := factory.bin sysupgrade.bin
   IMAGE/factory.bin := append-kernel | pad-to $$$$(KERNEL_SIZE) | append-ubi
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
-  DEVICE_PACKAGES := airoha-en7581-npu-firmware kmod-phy-airoha-en8811h kmod-i2c-an7581 kmod-leds-gpio kmod-gpio-button-hotplug uboot-envtools ubi-utils kmod-usb-storage-uas kmod-usb-net-cdc-ether kmod-fs-vfat kmod-fs-exfat kmod-fs-ext4 kmod-fs-ntfs3 blkid lsblk
+  DEVICE_PACKAGES := airoha-en7581-npu-firmware blkid \
+		    kmod-i2c-an7581 kmod-leds-gpio kmod-gpio-button-hotplug \
+		    kmod-phy-airoha-en8811h kmod-usb2 kmod-usb3 \
+		    kmod-usb-net-cdc-ether kmod-usb-storage-uas \
+		    kmod-fs-exfat kmod-fs-ext4 kmod-fs-ntfs3 kmod-fs-vfat \
+		    lsblk ubi-utils uboot-envtools
 endef
 TARGET_DEVICES += bell_xg-040g-md
 
